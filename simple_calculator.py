@@ -24,6 +24,17 @@ while True:
         print("Invalid input. Please enter a valid number.")
 
 # perform calculations
+try:
+    if operation == "+":
+        result = num1 + num2
+    elif operation == "-":
+        result = num1 - num2
+    elif operation == "*":
+        result = num1 * num2
+    else:
+        result = num1 / num2
+except ZeroDivisionError:
+    print("Error: Cannot divide by zero.")
 
 # display result
 
