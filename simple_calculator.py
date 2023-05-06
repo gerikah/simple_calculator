@@ -37,6 +37,7 @@ except ZeroDivisionError:
     print("Error: Cannot divide by zero.")
 
 # display result
+print("The result of {} {} {} is {}".format(num1, operation, num2, result))
 
 # ask is the user wants to try again or not
     # handle errors
