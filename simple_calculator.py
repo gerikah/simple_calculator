@@ -3,7 +3,15 @@
 
 
 # ask the user to choose one of the four math operations
-# handle errors
+while True:
+    # handle errors
+    try:
+        operation = input("Choose one mathematical operation (+, -, *, /): ")
+        if operation not in ["+", "-", "*", "/"]:
+            raise ValueError
+        break
+    except ValueError:
+        print("Invalid operation. Please try again.")
 
 # ask the user for two numbers
 # handle errors
