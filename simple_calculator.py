@@ -24,6 +24,7 @@ while True:
             print("Invalid input. Please enter a valid number.")
 
     # perform calculations
+    # handle errors 
     try:
         if operation == "+":
             result = num1 + num2
@@ -38,17 +39,21 @@ while True:
         # Set result to None if there is an error
         result = None  
 
-
     # display result if calculated
     if result is not None:
         print("The result of {} {} {} is {}".format(num1, operation, num2, result))
 
-    # ask is the user wants to try again or not
-    # handle errors
-    try:
-        answer = input("Do you want to try again? (yes/no): ")
-        if answer not in ["yes", "no"]:
-            raise ValueError
-        break
-    except ValueError:
-        print("Invalid input. Please enter 'yes' or 'no'.")
+    # ask if the user wants to try again
+    while True:
+        # handle errors
+        try:
+            answer = input("Do you want to try again? (yes/no): ")
+            if answer not in ["yes", "no"]:
+                raise ValueError
+            break
+        except ValueError:
+            print("Invalid input. Please enter 'yes' or 'no'.")
+
+    if answer == "no":
+        print("Thank you for using this calculator.")
+        break  # exit the outer while loop if the user does not want to try again
