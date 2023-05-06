@@ -14,7 +14,14 @@ while True:
         print("Invalid operation. Please try again.")
 
 # ask the user for two numbers
-# handle errors
+while True:
+    # handle errors
+    try:
+        num1 = float(input("Enter the first number: "))
+        num2 = float(input("Enter the second number: "))
+        break
+    except ValueError:
+        print("Invalid input. Please enter a valid number.")
 
 # perform calculations
 
