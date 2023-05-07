@@ -1,10 +1,13 @@
 # Object Oriented Programming CMPE-103 PROGRAMMING EXERCISES : Assignment 5
 # ALDAY, Gerikah L. - BSCPE 1-5
 
-import pyfiglet
-border = "*" * 180
-title = ("\n\n" + border + "\n\n" + "\033[95m" + pyfiglet.figlet_format("Calculator", justify = "center", font = "isometric1", width = 175) + "\n")
-print(title)
+try:
+    import pyfiglet
+    border = "*" * 180
+    title = ("\n\n" + border + "\n\n" + "\033[95m" + pyfiglet.figlet_format("Calculator", justify = "center", font = "isometric1", width = 175) + "\n")
+    print(title)
+except ImportError:
+    print("\n\n" + "\n\n" + "\033[95m" + pyfiglet.figlet_format("Import module error.", justify = "center", font = "cybermedium", width = 175) + border)
 
 while True:
     # ask the user to choose one of the four math operations
