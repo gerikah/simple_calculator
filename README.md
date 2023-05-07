@@ -21,17 +21,15 @@ The program prompts the user to choose an arithmetic operation from the followin
 5. The program will ask if the user wants to try again or exit.
 
 > Examples:
-'''
+
     Example Input:
         Enter operation (+, -, *, /): +
         Enter first number: 5
         Enter second number: 10
-'''
 
-''''
     Example Output:
         The result is: 15
-'''
+
 > Exception Handling
 Description of how the project implements exception handling, including specific types of errors and how they are handled.
 
