@@ -11,23 +11,28 @@ while True:
     while True:
         # handle errors
         try:
-            operation = input("Choose one mathematical operation (+, -, *, /): ")
+            print("\n\n" + border + "\n\n" + "\033[95m" + pyfiglet.figlet_format("Choose one mathemtical operation" , justify = "center", font = "cybermedium", width = 175) + '\n')
+            print ("\n\033[95m" + pyfiglet.figlet_format(" +   -   *   / ", justify = "center", width = 175) + "\n" + border)
+            operation = input(" ".center(85))
             if operation not in ["+", "-", "*", "/"]:
                 raise ValueError
             break
         except ValueError:
-            print("Invalid operation. Please try again.")
+            print("\n\n" + "\n\n" + "\033[95m" + pyfiglet.figlet_format("Invalid operation. Please try again.", justify = "center", font = "cybermedium", width = 175) + border)
+    print ("\n\n" + "\033[95m" + pyfiglet.figlet_format(" operation selected", justify = "center", font = "cybermedium", width = 175))
 
     # ask the user for two numbers
     while True:
         # handle errors
         try:
-            num1 = float(input("Enter the first number: "))
-            num2 = float(input("Enter the second number: "))
+            print("\n\n" + border + "\n\n" + "\033[95m" + pyfiglet.figlet_format("Enter the first number" , justify = "center", font = "cybermedium", width = 175))
+            num1 = float(input(" ".center(85)))
+            print("\n\n" + border + "\n\n" + "\033[95m" + pyfiglet.figlet_format("Enter the second number" , justify = "center", font = "cybermedium", width = 175))
+            num2 = float(input(" ".center(85)))
             break
         except ValueError:
-            print("Invalid input. Please enter a valid number.")
-
+            print("\n\n" + "\n\n" + "\033[95m" + pyfiglet.figlet_format("Invalid input. Please try again.", justify = "center", font = "cybermedium", width = 175) + border)    
+    
     # perform calculations
     # handle errors 
     try:
@@ -40,25 +45,27 @@ while True:
         else:
             result = num1 / num2
     except ZeroDivisionError:
-        print("Error: Cannot divide by zero.")
+        print("\n\n" + border + "\n\n" + "\033[95m" + pyfiglet.figlet_format("Error. You cannot divide by zero", justify = "center", font = "cybermedium", width = 175))    
         # Set result to None if there is an error
-        result = None  
+        result = None
 
     # display result if calculated
     if result is not None:
-        print("The result of {} {} {} is {}".format(num1, operation, num2, result))
+        print("\n\n" + "\n\n" + "\033[95m" + pyfiglet.figlet_format("The  result  of  {}  {}  {}  is  {}".format(num1, operation, num2, result), justify = "center", width = 175) + border)
 
     # ask if the user wants to try again
     while True:
         # handle errors
         try:
-            answer = input("Do you want to try again? (yes/no): ")
+            print(print("\n\n" + border + "\n\n" + "\033[95m" + pyfiglet.figlet_format("Do you want to try again? (yes/no)", justify = "center", font = "cybermedium", width = 175)))
+            answer = input(" ".center(85))
+            answer = answer.lower()
             if answer not in ["yes", "no"]:
                 raise ValueError
             break
         except ValueError:
-            print("Invalid input. Please enter 'yes' or 'no'.")
-
+            print("\n\n" + "\n\n" + "\033[95m" + pyfiglet.figlet_format("Invalid input. Please enter 'yes' or 'no'", justify = "center", font = "cybermedium", width = 175) + border)    
+    
     if answer == "no":
-        print("Thank you for using this calculator.")
+        print("\n\n" + border + "\n\n" + "\033[95m" + pyfiglet.figlet_format("Thank you for using this calculator.", justify = "center", width = 175))
         break # exit the outer while loop if the user does not want to try again
