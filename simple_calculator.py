@@ -1,6 +1,11 @@
 # Object Oriented Programming CMPE-103 PROGRAMMING EXERCISES : Assignment 5
 # ALDAY, Gerikah L. - BSCPE 1-5
 
+import pyfiglet
+border = "*" * 180
+title = ("\n\n" + border + "\n\n" + "\033[95m" + pyfiglet.figlet_format("Calculator", justify = "center", font = "isometric1", width = 175) + "\n")
+print(title)
+
 while True:
     # ask the user to choose one of the four math operations
     while True:
@@ -56,4 +61,4 @@ while True:
 
     if answer == "no":
         print("Thank you for using this calculator.")
-        break  # exit the outer while loop if the user does not want to try again
+        break # exit the outer while loop if the user does not want to try again
